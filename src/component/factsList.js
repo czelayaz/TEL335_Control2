@@ -10,6 +10,7 @@ function FactsList (props){
                     <Col><label><h5>Dato:</h5></label></Col>
                     <Col><label><h5>Fecha de Creación:</h5></label></Col>
                     <Col><label><h5>Categorías:</h5></label></Col>
+                    <Col><label><h5>Opinión:</h5></label></Col>
                 </Row>
                         <ul className="arrow-styled">
                             {
@@ -25,6 +26,9 @@ function FactsList (props){
                                             </Col>
                                             <Col>
                                                 <h7>{fact.categories}</h7>
+                                            </Col>
+                                            <Col>
+                                                <Button variant="outline-danger" >Me Gusta</Button>
                                             </Col>
                                         </div>
                                     </div>
