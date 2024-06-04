@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Button, Form, InputGroup } from 'react-bootstrap';
+import { Container, Row, Button, Form, InputGroup} from 'react-bootstrap';
+import List from './layout/fact.layout'
 
 function App() {
   return (
@@ -24,6 +24,9 @@ function App() {
                 </InputGroup>
               </Row>
           </Container>
+      </section>
+      <section id="FactsList">
+        <List/>
       </section>
     </div>
   );
