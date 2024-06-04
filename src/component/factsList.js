@@ -6,27 +6,27 @@ function FactsList (props){
             <Container>
                 <Row>
                 <div className="col-12 text-left">
+                <Row>
+                    <Col><label><h5>Dato:</h5></label></Col>
+                    <Col><label><h5>Fecha de Creación:</h5></label></Col>
+                    <Col><label><h5>Categorías:</h5></label></Col>
+                </Row>
                         <ul className="arrow-styled">
                             {
                                 props.facts.map((fact, index) => {
                                     return(
                                     <div key={index} className='row'>
-                                        <Row>
-                                            <Col><label><h3>Dato:</h3></label></Col>
-                                            <Col><label><h3>Dato:</h3></label></Col>
-                                            <Col><label><h3>Dato:</h3></label></Col>
-                                        </Row>
-                                        <Row>
+                                        <div class="row border-bottom">
                                             <Col>
-                                                <h5>{fact.value}</h5>
+                                                <h7>{fact.value}</h7>
                                             </Col>
                                             <Col>
-                                                <h5>{fact.created_at}</h5>
+                                                <h7>{fact.created_at.split(' ')[0]}</h7>
                                             </Col>
                                             <Col>
-                                                <h5>{fact.categories}</h5>
+                                                <h7>{fact.categories}</h7>
                                             </Col>
-                                        </Row>
+                                        </div>
                                     </div>
                                 )})
                             }
