@@ -2,20 +2,15 @@ import {useState, useEffect} from "react";
 import axios from "axios"
 import FactsList from "../component/factsList";
 
-function List(){
-    const [loaded, setDataLoaded] = useState(false)
+function List(props){
     const [factsData, setFactsData] = useState([])
 
     useEffect(()=>{
         const  fetchData = async () => {
-            if (!loaded) {
-                const result = await axios.get("https://api.chucknorris.io/jokes/random")
-                console.log(result.data)
+                const result = await axios.get("https://api.chucknorris.io/jokes/search?query="+props.text)
                 if (result.data) {
-                    setDataLoaded(true)
-                    setFactsData(result.data)
+                    setFactsData(result.data.result)
                 }
-            }
         }
         fetchData()
     })

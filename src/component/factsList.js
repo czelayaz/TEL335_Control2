@@ -1,29 +1,37 @@
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row, Button} from "react-bootstrap";
 
 function FactsList (props){
-    console.log(props.facts)
     return(
         <section id="ListOfFacts">
             <Container>
                 <Row>
-                    <Col>
-                    <label>Facts:</label>
+                <div className="col-12 text-left">
                         <ul className="arrow-styled">
-                                {
+                            {
                                 props.facts.map((fact, index) => {
-                                    console.log(fact)
                                     return(
-                                        <div key={index} className='row'>
-                                            <Row>
-                                                <Col>
-                                                    <h5>{fact.value}</h5>
-                                                </Col>
-                                            </Row>
-                                        </div>
-                                    )})
-                                }
-                            </ul>
-                    </Col>
+                                    <div key={index} className='row'>
+                                        <Row>
+                                            <Col><label><h3>Dato:</h3></label></Col>
+                                            <Col><label><h3>Dato:</h3></label></Col>
+                                            <Col><label><h3>Dato:</h3></label></Col>
+                                        </Row>
+                                        <Row>
+                                            <Col>
+                                                <h5>{fact.value}</h5>
+                                            </Col>
+                                            <Col>
+                                                <h5>{fact.created_at}</h5>
+                                            </Col>
+                                            <Col>
+                                                <h5>{fact.categories}</h5>
+                                            </Col>
+                                        </Row>
+                                    </div>
+                                )})
+                            }
+                        </ul>
+                    </div>
                 </Row>
             </Container>
         </section>
